@@ -1,0 +1,32 @@
+{
+    "name": "klaravel/settings",
+    "description": "Laravel database settings manager.",
+    "license": "MIT",
+    "keywords": ["laravel", "setting", "options"],
+    "authors": [
+        {
+            "name": "Keyur Ajmera",
+            "email": "ajmerainfo@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "5.*",
+        "illuminate/console": "5.*",
+        "illuminate/cache": "5.*"
+    },
+    "autoload-dev": {
+        "classmap": ["tests/TestCase.php"]   
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "5.6.*",
+        "illuminate/database": "5.3.*",
+        "illuminate/container": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klaravel\\Settings\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
