@@ -1,9 +1,5 @@
 ## General Settings Manager for Laravel 5.3+
 [![Build Status](https://travis-ci.org/klaravel/settings.svg)](https://travis-ci.org/klaravel/settings)
-[![Total Downloads](https://poser.pugx.org/klaravel/settings/d/total.svg)](https://packagist.org/packages/klaravel/settings)
-[![Latest Stable Version](https://poser.pugx.org/klaravel/settings/v/stable.svg)](https://packagist.org/packages/klaravel/settings)
-[![Latest Unstable Version](https://poser.pugx.org/klaravel/settings/v/unstable.svg)](https://packagist.org/packages/klaravel/settings)
-[![License](https://poser.pugx.org/klaravel/settings/license.svg)](https://packagist.org/packages/klaravel/settings)
 
 This module allow you to store settings into database with easy commands. You can store as many as settings and it will fetch settings with caching so only one database query and all settings will store into cache.
 
