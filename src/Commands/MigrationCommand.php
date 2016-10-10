@@ -35,8 +35,6 @@ class MigrationCommand extends Command
      */
     public function handle()
     {
-        $this->line(__DIR__ .'/../views');
-
         $this->laravel->view->addNamespace('settings', __DIR__.'/../views');
 
         $this->line('');
