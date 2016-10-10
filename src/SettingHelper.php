@@ -1,5 +1,6 @@
 <?php namespace Klaravel\Settings;
 
+use Illuminate\Support\Facades\Cache;
 use Klaravel\Settings\Models\Setting as SettingModel;
 
 /**
