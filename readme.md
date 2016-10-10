@@ -21,18 +21,12 @@ This module allow you to store settings into database with easy commands. You ca
     Klaravel\Settings\ServiceProvider::class,
     ```
 
-3. Open `config/app.php` and in `providers` section add:
- 
-    ```php
-    Klaravel\Settings\ServiceProvider::class,
-    ```
-
     in `aliases` section add:
 
     ```php
     'Setting' => Klaravel\Settings\SettingsFacade::class,
     ```
-4. Now generate the Settings migration:
+3. Now generate the Settings migration:
 
     ```
     php artisan settings:migration
