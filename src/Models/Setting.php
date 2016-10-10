@@ -1,6 +1,5 @@
 <?php namespace Klaravel\Settings\Models;
 
-use App\QueryFilters\QueryFilter;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 
