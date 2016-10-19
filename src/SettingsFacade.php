@@ -1,4 +1,6 @@
-<?php namespace Klaravel\Settings;
+<?php
+
+namespace Klaravel\Settings;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,11 +1,13 @@
-<?php namespace Klaravel\Settings;
+<?php
+
+namespace Klaravel\Settings;
 
 /**
  * Laravel service provider for default bind and load things.
  */
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-	/**
+    /**
      * Indicates if loading of the provider is deferred.
      *
      * @var bool

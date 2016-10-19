@@ -1,4 +1,6 @@
-<?php namespace Klaravel\Settings\Commands;
+<?php
+
+namespace Klaravel\Settings\Commands;
 
 use Illuminate\Console\Command;
 
@@ -9,7 +11,7 @@ class MigrationCommand extends Command
 {
     /**
      * Selected profile for generate
-     * 
+     *
      * @var string
      */
     private $profile;
@@ -35,7 +37,7 @@ class MigrationCommand extends Command
      */
     public function handle()
     {
-        $this->laravel->view->addNamespace('settings', __DIR__.'/../views');
+        $this->laravel->view->addNamespace('settings', __DIR__ . '/../views');
 
         $this->line('');
 
@@ -44,7 +46,7 @@ class MigrationCommand extends Command
             $this->info("Migration successfully created!");
         } else {
             $this->error(
-                "Couldn't create migration.\n Check the write permissions".
+                "Couldn't create migration.\n Check the write permissions" .
                 " within the database/migrations directory."
             );
         }
@@ -59,14 +61,15 @@ class MigrationCommand extends Command
      */
     protected function createMigration()
     {
-        $migrationFile = base_path("/database/migrations")."/".date('Y_m_d_His')
-            ."_create_settings_table.php";
+        $migrationFile = base_path("/database/migrations") . "/" . date('Y_m_d_His')
+            . "_create_settings_table.php";
 
         $output = $this->laravel->view->make('settings::generators.migration')->render();
 
         if (!file_exists($migrationFile) && $fs = fopen($migrationFile, 'x')) {
             fwrite($fs, $output);
             fclose($fs);
+
             return true;
         }
 
