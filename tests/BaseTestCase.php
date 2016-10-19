@@ -13,7 +13,7 @@ abstract class BaseTestCase extends OrchestraTestCase
 
         //$this->setUpDatabase();
         $this->migrateTables();
-        $this->seed();
+        $this->seedData();
 
         // Enabled query log for test
         \DB::enableQueryLog();
@@ -56,7 +56,7 @@ abstract class BaseTestCase extends OrchestraTestCase
         ]);
     }
 
-    public function seed()
+    public function seedData()
     {
         SettingModel::create(['key' => 'key1', 'value' => 'value1']);
         SettingModel::create(['key' => 'key2', 'value' => 'value2']);
