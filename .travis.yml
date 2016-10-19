@@ -3,16 +3,23 @@ language: php
 php:
   - 5.6
   - 7.0
-  - hhvm
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - php: 7.0
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
 
 script:
-  - vendor/bin/phpunit --verbose
+  - phpunit --coverage-text --coverage-clover=coverage.clover
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - if [[ $COMPOSER_FLAGS == '' ]]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
