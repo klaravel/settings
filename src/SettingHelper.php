@@ -73,6 +73,19 @@ class SettingHelper
     }
 
     /**
+     * Store new key and value in settings if it's already
+     *  exits then override.
+     *
+     * @param  string $key
+     * @param  string $value
+     * @return null
+     */
+    public function set($key, $value)
+    {
+        return $this->put($key, $value);
+    }
+
+    /**
      * Delete setting data from databasse
      *
      * @param  string $key

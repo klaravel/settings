@@ -41,6 +41,7 @@ Here's a quick example that shows how to use `Setting`:
 
 ```php
 Setting::put('key', 'value');   // Insert settings into database
+Setting::set('key', 'value');   // Insert settings into database
 Setting::get('key');            // Get settings from database
 Setting::has('key');            // Check key exits in database
 Setting::forget('key');         // Delete key and value from database
